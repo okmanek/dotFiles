@@ -15,7 +15,7 @@ set clipboard=unnamed			"zmiana defaultowego zjebanego zachowania schowka tak by
 
 map <C-T> :tabnew<CR>			"ctrl - T opens new tab - like in webbrowsers
 map <Tab> <ESC>gt<CR>			"<tab> - go to next tab
-map <S-Tab> <ESC>gT<CR>			"shift - tab - go to previous tab
+map <S-Tab> <ESC>gT<CR>		"shift - tab - go to previous tab
 
 vnoremap > >gv				"shift > indents block of code without deselecting it
 vnoremap < <gv				"shift < outdents (?)
@@ -30,8 +30,8 @@ set nowritebackup
 set noswapfile
 
 nnoremap <leader>t :w!<cr>:e %:h<cr>	"\t otwiera aktualny folder. ctrl o zamyka
+let mapleader=","
 
-"windows compatibility mappings:
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
