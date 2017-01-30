@@ -31,3 +31,6 @@ alias gs='git status'
 alias gl='git log'
 
 alias f='free -m'
+alias t='tmux'
+
+alias sql='mysql -u root -p -t'
