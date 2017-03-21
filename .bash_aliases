@@ -20,9 +20,10 @@ alias up='sudo apt-get update && sudo apt-get -y upgrade'
 alias c='cd'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias l='ls'
-alias la='ls -la'
-alias lt='ls -ltr' 
+alias l='ls --color'
+alias ls='ls --color'
+alias la='ls -lA --color'
+alias lt='ls -ltr --color' 
 alias v='vim'
 
 alias g='git'
@@ -38,7 +39,7 @@ alias t='tmux'
 
 alias sql='mysql -u root -p -t'
 
-runn() {
+run() {
   g++ $1;
   ./a.out
 }
