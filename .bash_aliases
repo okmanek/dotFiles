@@ -39,12 +39,5 @@ alias t='tmux'
 
 alias sql='mysql -u root -p -t'
 
-run() {
-  g++ $1;
-  ./a.out
-}
-
-hello() {
-  STR=$'#include <iostream>\n\nint main()\n{\n}'
-  echo "$STR" > $1
-}
+#temporary, propably to be deleted sooner or later
+alias key="/etc/init.d/keyboard.sh" #light my keyboard - CMStorm Devastator

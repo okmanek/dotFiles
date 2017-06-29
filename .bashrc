@@ -41,6 +41,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 PATH=$PATH:/usr/local/bin:/home/i/code/android-studio/bin/
 export PATH
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
+
+. ~/.bash_aliases
+. ~/.bash_functions
+echo "bash entered"
