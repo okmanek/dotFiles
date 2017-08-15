@@ -1,0 +1,53 @@
+module add tmux
+tmux
+
+echo 'ENTERED: ~/.cshrc.user'
+
+alias hist 'history'
+
+alias v 'vim'
+#alias ve 'vim ~/.vimrc'
+alias ve 'vim ~/.cshrc.user'
+
+alias sv "ExecProj 2 'setup-repo wd1'"
+alias svu "ExecProj 2 'setup-repo wd1'"
+
+alias sv_tgs "ExecProj 2 'setup-repo -l wd1 - bash'"
+alias svu_tgs "ExecProj 2 'setup-repo wd1 - bash'"
+
+alias reload "source ~/.cshrc.user"
+
+alias gs 'git status'
+alias gss 'git status -sb'
+alias gl 'git ll'
+alias gll 'git ls'
+alias gp 'git pull --rebase'
+alias gd 'git diff HEAD'
+alias gdf 'git diff HEAD'
+alias gdff 'git diff HEAD^'
+alias gdfff 'git diff HEAD^^'
+alias gf 'git fetch'
+
+# cd commands
+alias cdr "cd /myrepo/users/eurskac/git/root/rnc/wd2/ABSTRACT/RNC"
+
+alias l 'ls --color=auto'
+alias la 'ls -lA'
+alias ls 'ls -lh --color=auto'
+alias lsa 'ls -lah --color=auto'
+
+alias tree 'tree -C'
+
+# grep
+alias grep 'grep --color'
+alias egrep 'egrep --color'
+
+alias .. 'cd ..'
+alias ... 'cd ...'
+
+alias week 'date +%V'
+
+umask 002
+
+#functions:
+alias f '~/.cshrc.finder'

@@ -1,0 +1,52 @@
+#source ~/.functions
+alias reload="source ~/.bashrc"
+
+#Aliases 
+alias sv="ExecProj 2 'setup-repo wd1'"
+alias svl="ExecProj 2 'setup-repo -l wd1'"
+
+alias sv_tgs="ExecProj 1 'setup-repo wd1 - bash'"
+alias svl_tgs="ExecProj 1 'setup-repo -l wd1 - bash'"
+
+#3gsim aliases
+alias zpm='/proj/DTE_releases/latest/cello/cade_struct/Linux/i386/bin/zpm'
+alias tgs_flow='/app/flow/Y16W15/bin/flow.pl'
+alias tgs_decode='/app/decoder/Y16W21/bin/decoder.pl'
+alias a='autotest_recursive'
+alias moshell='/app/moshell/latest/moshell/moshell'
+
+#RNC aliases
+alias rsarte="echo 'RUNNING RSA RTE IN BACKGROUND' ; {GIT}rnc/env/utils/design_tools/development_tools/bin/rsarte > /dev/null 2>&1 &"
+alias rsarte_test='{GIT}rnc/env/utils/design_tools/development_tools/bin/rsarte_test'
+alias rsarte_epb2='{GIT}rnc/env/utils/design_tools/development_tools/bin/rsarte_epb2'
+alias rsa_kill="kill_rsarte_instances"
+alias rncmomrsarte='{GIT}rnc/env/utils/design_tools/development_tools/bin/rncmomrsarte > /dev/null 2>&1 &'
+alias ge='{GIT}rnc/env/utils/bin/ge'
+alias cmd='{WMR_TOOLS}/common/cmd/Client/cmd.sh'
+alias git-all="find GIT/../ABSTRACT/ -name .git -type d | xargs -t -n1 -i_ git -C _/.."
+
+#Git aliases
+alias gs='git status -sb'
+alias gl='git ls'
+#alias gla='git log --author='
+alias gp='git pull --rebase'
+
+# cd commands
+alias cdr='goto_project'
+alias cdp='goto_proj'
+alias cdt='cd /proj/3gsim/usr/testteam'
+alias ..='cd ..'
+
+#prompt commands
+alias swap='swap_prompt'
+
+alias ls='ls -lh --color=auto'
+alias lsa='ls -lah --color=auto'
+alias lsg='ls -lah --color=auto | grep -i'
+ 
+# grep
+alias grep='grep --color'
+
+# figlet
+alias fig='figlet -d /home/epawcen/apps/figlet/fonts -c'
+alias ccl='customclock'

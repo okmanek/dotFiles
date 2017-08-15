@@ -20,11 +20,14 @@ alias up='sudo apt-get update && sudo apt-get -y upgrade'
 alias c='cd'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias l='ls --color'
 alias ls='ls --color'
 alias la='ls -lA --color'
 alias lt='ls -ltr --color' 
+
 alias v='vim'
+alias ve='vim ~/.bash_aliases'
 
 alias g='git'
 alias ga='git add'
@@ -32,12 +35,19 @@ alias gc='git commit -m'
 alias gp='git push origin master'
 alias gs='git status'
 alias gl='git log'
+alias gdf='git diff HEAD'
+alias gdfd='git diff HEAD^'
 
 alias f='free -m'
 alias p='ping wp.pl'
 alias t='tmux'
 
 alias sql='mysql -u root -p -t'
+
+alias hist='history'
+alias reload='source ~/.bashrc'
+alias grep='grep --color'
+alias week='date +%V'
 
 #temporary, propably to be deleted sooner or later
 alias key="/etc/init.d/keyboard.sh" #light my keyboard - CMStorm Devastator
