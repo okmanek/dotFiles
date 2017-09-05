@@ -1,42 +1,40 @@
-"simple random changes
-set colorcolumn=80
-set number                              "shows line numbers on the right
-set hlsearch                            "highlights all search results
-set ignorecase                          "case INsensitive search
-set incsearch                           "incremental search. starting to search before pressing <cr>. better for time efficiency
+set t_SH="fix for the bug (some signs when launching vim)
 
+"simple random changes
+set number                              "shows line numbers on the right
+set ignorecase                          "case INsensitive search
+set history=1000"remember 1000 commands and search history
+set nowrap"don't wrap lines
+
+
+"searching
+set hlsearch                            "highlights all search results
+set incsearch                           "incremental search. starting to search before pressing <cr>. better for time efficiency
+nmap <silent> // :nohlsearch<CR>        "2 slashes make highlighted search results disappear
 
 set clipboard=unnamed                   "zmiana defaultowego zjebanego zachowania schowka tak by tekst skopiowany np. w przegladarce mozna bylo wkleic do vima"
 
-"I want tabs to work like in webbrowsers
-map <C-T> :tabnew<CR>                   "ctrl - T opens new tab
-map <C-w> :tabclose<CR>                 "ctrl closes current tab
-map <Tab> <ESC>gt<CR>                   "<tab> - go to next tab
-map <S-Tab> <ESC>gT<CR>                 "shift - tab - go to previous tab
-
-
-set tabstop=2                           "tab width = 2
-set expandtab                           "whenever you press tab, spaces are inserted. ctrl-V-tab still works as a tab
 
 "shortcuts for editing and sourcing ~/.vimrc. todo: change for better shortcuts and add saving just before sourcing
 nnoremap gev :e $MYVIMRC<cr>
 
 
-
-"leader key
+"leader key and other keys
 let mapleader = "\<Space>"              "<Space" is a leader key
 noremap <leader>w :wa<cr>               "w writes a file
 noremap <leader>edit :e $MYVIMRC<cr>    "<leader> + "edit" to edit a .vimrc file
 noremap <leader>src :so $MYVIMRC<cr>    "<leader> + "src" to source a .vimrc file
+inoremap :q! <Esc>:q! :q!<cr>
+
 
 "without it you need to press it 2 times for the same effect. only in visual mode
 "noremap > >gv                          "shift > indents block of code without deselecting it
 "noremap < <gv                          "shift < outdents (?)
 
 "mniej raka w zyciu. vim nie tworzy wszedzie plikow swapow, itp.
-set nobackup
+set nobackup"don't create backups
 set nowritebackup
-set noswapfile
+set noswapfile"don't use swap file
 
 
 "tested pobieznie and works quite fine"
@@ -52,20 +50,60 @@ nnoremap <leader<enter> :split<cr>      "splitting
 
 
 
+
+
+
+"NOT USED FOR NOW
+"set colorcolumn=80
+"
 "nie dziala do konca jak powinno, ale idea fajna. rozminic
 "zrodlo: https://www.youtube.com/watch?v=1YeJxrblcmI
-map <F9> :w <CR> :!clear && gcc % <CR>
-map <C-F9> :w <CR> :!clear && gcc % -o %< && ./%< <CR>
-
+"map <F9> :w <CR> :!clear && gcc % <CR>
+"map <C-F9> :w <CR> :!clear && gcc % -o %< && ./%< <CR>
+"
+"set mouse=a"scrolling is better but unables to copy with ctrl+shift+c
+"
+"I want tabs to work like in webbrowsers
+"map <C-T> :tabnew<CR>                   "ctrl - T opens new tab
+"map <C-w> :tabclose<CR>                 "ctrl closes current tab
+"map <Tab> <ESC>gt<CR>                   "<tab> - go to next tab
+"map <S-Tab> <ESC>gT<CR>                 "shift - tab - go to previous tab
 
 
 
 "todo:
 "think of shortcut to replace <C-W> (moving to other splits)
 "why <C-T> no only opens new tab but also splits the view? default `layouts`?
-
+"
+"nie dzialaja, sprawdzic czemu:
+"set listchars=trail:&
+"set listchars=tab:>.,extends:#
+"autocmd filetype html,xml set listchar-=tab:>
 
 "garbage
 "set showcmd
 "set showmode                            "show insert/replace/visual mode. apparantly it's default behaviour anyway so fuck it
+
+
+"tabs:
+set tabstop=4"set tab width
+   
+"set expandtab                           "whenever you press tab, spaces are inserted. ctrl-V-tab still works as a tab
+
+
+
+
+"ctrl + h/j/k/l changes through splits
+map <C-Left> <C-w>h
+map <C-Down> <C-w>j
+map <C-Up> <C-w>k
+map <C-Right> <C-w>l
+
+"map <C-h> :vertical resize +5
+"map <C-j> :vertical resize -5
+"map <C-k> :resize +5
+"map <C-l> :resize +5
+
+
+
 

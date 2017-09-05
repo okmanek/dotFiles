@@ -36,7 +36,7 @@ alias gp='git push origin master'
 alias gs='git status'
 alias gl='git log'
 alias gdf='git diff HEAD'
-alias gdfd='git diff HEAD^'
+alias gdff='git diff HEAD^'
 
 alias f='free -m'
 alias p='ping wp.pl'
@@ -48,6 +48,7 @@ alias hist='history'
 alias reload='source ~/.bashrc'
 alias grep='grep --color'
 alias week='date +%V'
+alias gspp='gitStashPullPop()'
 
 #temporary, propably to be deleted sooner or later
 alias key="/etc/init.d/keyboard.sh" #light my keyboard - CMStorm Devastator
