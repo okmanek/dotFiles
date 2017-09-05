@@ -25,6 +25,7 @@ alias l='ls --color'
 alias ls='ls --color'
 alias la='ls -lA --color'
 alias lt='ls -ltr --color' 
+#alias l\. 'ls -d .* --color=auto'#shows *only* hidden files#dot in alias can only be used in csh :(
 
 alias v='vim'
 alias ve='vim ~/.bash_aliases'
@@ -48,7 +49,6 @@ alias hist='history'
 alias reload='source ~/.bashrc'
 alias grep='grep --color'
 alias week='date +%V'
-alias gspp='gitStashPullPop()'
 
 #temporary, propably to be deleted sooner or later
 alias key="/etc/init.d/keyboard.sh" #light my keyboard - CMStorm Devastator

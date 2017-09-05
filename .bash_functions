@@ -25,16 +25,16 @@ shutdown() {
   fi
 }
 
-gitStashPullPop() {
+gspp() {
   LINES=`git diff HEAD | wc -l`
-  echo $LINES
+  echo "number of lines different from HEAD: $LINES"
   if [ $LINES -gt 0 ]; then
-    git stash
-    git pull
-    git stash pop
-    echo "git stasher: stashed -> pulled -> popped"
+	git stash
+	git pull
+	git stash pop
+	echo "git stasher completed: stashed, pulled, popped"
   else
-    git pull
-    echo "git stasher: pulled"
+	git pull
+	echo "git stasher completed: pulled"
   fi
 }
