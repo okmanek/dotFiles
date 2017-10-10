@@ -43,7 +43,7 @@ alias sql='mysql -u root -p -t'
 
 alias hist='history'
 alias reload='source ~/.bashrc'
-alias grep='grep --color'
+alias grep='grep -i --color'
 alias week='date +%V'
 
 #temporary, propably to be deleted sooner or later

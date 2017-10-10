@@ -38,3 +38,14 @@ gspp() {
 	echo "git stasher completed: pulled"
   fi
 }
+
+gg() {
+  #toLowercase=${1,,}
+  #echo $1
+  #echo $toLowercase
+  if [[ $1 = $toLowercase ]]; then
+  grep -i "$2"
+  else
+  grep "$2"
+  fi
+}

@@ -11,7 +11,9 @@ set clipboard=unnamed                   "zmiana defaultowego zjebanego zachowani
 set hlsearch                            "highlights all search results
 set incsearch                           "incremental search. starting to search before pressing <cr>. better for time efficiency
 nmap <silent> // :nohlsearch<CR>        "2 slashes make highlighted search results disappear
-
+"those 2 below make searching case insensitive unless there's >= 1 uppercase sign
+set ignorecase
+set smartcase
 
 "shortcuts for editing and sourcing ~/.vimrc. todo: change for better shortcuts and add saving just before sourcing
 nnoremap gev :e $MYVIMRC<cr>
