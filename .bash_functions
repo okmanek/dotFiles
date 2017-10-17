@@ -25,6 +25,7 @@ shutdown() {
   fi
 }
 
+#git stash->pull->pop (if there is sth to stash, else just pull)
 gspp() {
   LINES=`git diff HEAD | wc -l`
   echo "number of lines different from HEAD: $LINES"
