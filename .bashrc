@@ -49,4 +49,4 @@ export PATH
 . ~/.bash_aliases
 . ~/.bash_functions
 
-echo "bash entered"
+echo "executed ~/.bashrc"
