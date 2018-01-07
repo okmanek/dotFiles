@@ -5,11 +5,13 @@ alias matrix='echo -e "1"; while $t; do for i in `seq 1 30`;do r="$[($RANDOM % 2
 
 #zalezne od polozenia plikow na dysku
 alias cg='cd ~/code/github-okmanek/'
+alias web='cd ~/code/webdev/'
 
 alias reboot='sudo reboot'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias up='sudo apt-get update && sudo apt-get -y upgrade' 
+alias dist='sudo apt-get dist-upgrade'
 
 alias c='cd'
 alias ..='cd ..'
@@ -25,12 +27,10 @@ alias v='vim'
 alias V=' sudo vim'
 alias ve='vim ~/.bash_aliases'
 
-alias t='tmux'
-
 alias g='git'
 alias ga='git add'
 alias gc='git commit -m'
-alias gp='git push origin master'
+alias gp='git pull'
 alias gs='git status'
 alias gl='git log'
 alias gdf='git diff HEAD'
@@ -50,4 +50,5 @@ alias week='date +%V'
 #temporary, propably to be deleted sooner or later
 #alias key="/etc/init.d/keyboard.sh" #light my keyboard - CMStorm Devastator on Linux Mint and derivative distros
 alias key="xmodmap -e 'add mod3 = Scroll_Lock'" #light my keyboard on Linux Manjaro
-alias yupdate='yaourt -Suy --aur --noconfirm'
+alias sus='delay 1000; sudo pm-suspend'
+alias suspend='sudo pm-suspend'

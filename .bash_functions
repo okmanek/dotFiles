@@ -1,6 +1,11 @@
+### c++-related ###
 run() {
   g++ $1;
   ./a.out
+  rm ./a.out
+  # compiles cpp program, runs it and deletes binary file
+  # usage: "run hello.cc"
+  # TODO: ++ another argument to decide if it should delete the binary file
 }
 
 hello() {
@@ -8,23 +13,9 @@ hello() {
   echo "$STR" > $1
 }
 
-suspend() {
-  TIME=$1;
-  TIME=$(($TIME * 60));
-  sleep $TIME;
-  systemctl suspend
-  #sleep 5 && systemctl suspend & ???
-}
 
-shutdown() {
-  if [ -z $1 ]; then
-    sudo shutdown -h now
-#else
-#TIME=$1
-#sudo shutdown -h $TIME
-  fi
-}
 
+### git related ###
 #git stash->pull->pop (if there is sth to stash, else just pull)
 gspp() {
   LINES=`git diff HEAD | wc -l`
@@ -40,13 +31,23 @@ gspp() {
   fi
 }
 
-gg() {
-  #toLowercase=${1,,}
-  #echo $1
-  #echo $toLowercase
-  if [[ $1 = $toLowercase ]]; then
-  grep -i "$2"
-  else
-  grep "$2"
+
+
+### system related
+shutdown() {
+  if [ -z $1 ]; then
+    sudo shutdown -h now
+#else
+#TIME=$1
+#sudo shutdown -h $TIME
   fi
+}
+
+
+
+### other ###
+foo() {
+  xmodmap -e 'add mod3 = Scroll_Lock'
+  echo ".keyboard_light.sh sourced"
+  # enables backlight of my keyboard CM Storm Devastator
 }

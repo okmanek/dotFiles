@@ -24,7 +24,11 @@ let mapleader = "\<Space>"              "<Space" is a leader key
 noremap <leader>w :wa<cr>               "w writes a file
 noremap <leader>edit :e $MYVIMRC<cr>    "<leader> + "edit" to edit a .vimrc file
 noremap <leader>src :so $MYVIMRC<cr>    "<leader> + "src" to source a .vimrc file
-"
+nnoremap <leader>t :w!<cr>:e %:h<cr>
+nnoremap <leader><space> :vsplit<cr>    "splitting
+nnoremap <leader<cr> :split<cr>         "splitting
+
+
 inoremap :q! <Esc>:q!"easier quitting even in insert mode
 
 
@@ -45,9 +49,6 @@ set smartindent                         "does the right thing (mostly) in progra
 set cindent                             "stricter rules for C programs
 
 
-nnoremap <leader>t :w!<cr>:e %:h<cr>
-nnoremap <leader><space> :vsplit<cr>    "splitting
-nnoremap <leader<enter> :split<cr>      "splitting
 
 
 
@@ -83,9 +84,10 @@ nnoremap <leader<enter> :split<cr>      "splitting
 
 
 "tabs:
-set tabstop=4"set tab width
+set tabstop=4       "set tab width
+set expandtab		"tabs are spaces
    
-
+	
 
 
 
@@ -99,3 +101,8 @@ map <C-h> :vertical resize -3<cr>
 map <C-l> :vertical resize +3<cr>
 map <C-k> :resize -3<cr>
 map <C-j> :resize +3<cr>
+
+syntax enable
+
+"https://dougblack.io/words/a-good-vimrc.html#colors
+"syntax on " enable syntax processing
