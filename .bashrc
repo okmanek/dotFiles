@@ -38,8 +38,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-PATH=$PATH:/usr/local/bin:/home/i/code/android-studio/bin/
-export PATH
+#PATH=$PATH:/usr/local/bin:/home/i/code/android-studio/bin/
+#export PATH
 
 
 
@@ -50,7 +50,5 @@ fi
 if [ -f ~/.bash_functions ]; then
         . ~/.bash_functions
 fi
-
-
 
 echo "executed ~/.bashrc"

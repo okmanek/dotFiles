@@ -3,7 +3,7 @@ alias sadLenny='echo "( ͡° ʖ̯ ͡°)"'
 
 alias matrix='echo -e "1"; while $t; do for i in `seq 1 30`;do r="$[($RANDOM % 2)]";h="$[($RANDOM % 4)]";if [ $h -eq 1 ]; then v="0 $r";else v="1 $r";fi;v2="$v2 $v";done;echo -e $v2;v2="";done;'
 
-#zalezne od polozenia plikow na dysku
+#dependent on files position
 alias cg='cd ~/code/github-okmanek/'
 alias web='cd ~/code/webdev/'
 
@@ -46,9 +46,3 @@ alias hist='history'
 alias reload='source ~/.bashrc'
 alias grep='grep -i --color'
 alias week='date +%V'
-
-#temporary, propably to be deleted sooner or later
-#alias key="/etc/init.d/keyboard.sh" #light my keyboard - CMStorm Devastator on Linux Mint and derivative distros
-alias key="xmodmap -e 'add mod3 = Scroll_Lock'" #light my keyboard on Linux Manjaro
-alias sus='delay 1000; sudo pm-suspend'
-alias suspend='sudo pm-suspend'
