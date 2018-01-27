@@ -34,12 +34,12 @@ gspp() {
 
 
 ### system related
-shutdown() {
+quittt() {
   if [ -z $1 ]; then
     sudo shutdown -h now
-#else
-#TIME=$1
-#sudo shutdown -h $TIME
+  else
+    TIME=$1
+    sudo shutdown -h $TIME --no-wall
   fi
 }
 
@@ -47,22 +47,18 @@ sus() {
   echo $@;
   if [ $# -eq 0 ]; then
     #close now if user did not give time
-    echo "suspending now"
-    sudo pm-suspend
-    ls;
+    echo "suspending now";
+    sudo pm-suspend;
   else
     # close after n minutes (n specified by user
     echo -e "suspending after $1 seconds"
     sleep $1;
+    sudo pm-suspend;
   fi
 }
 
 
 
-### other ###
-key() {
-  xmodmap -e 'add mod3 = Scroll_Lock'
-  echo ".keyboard_light.sh sourced"
-  # Causes Scroll Lock to light backlight of my keyboard CM Storm Devastator
-  # works on Linux Mint and derivative distros
-}
+# Causes Scroll Lock to light backlight of my keyboard CM Storm Devastator
+# works on Linux Mint and derivative distros
+xmodmap -e 'add mod3 = Scroll_Lock'
