@@ -34,7 +34,7 @@ gspp() {
 
 
 ### system related
-quittt() {
+quit() {
   if [ -z $1 ]; then
     sudo shutdown -h now
   else
