@@ -55,3 +55,4 @@ alias week='date +%V'
 alias reboot='sudo reboot'
 #alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
 
+alias tmp='cd ~/code/github-okmanek/myGit'
