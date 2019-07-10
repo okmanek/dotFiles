@@ -1,5 +1,5 @@
 ### global vars ###
-ALIASES_PATH='~/.bash_aliases'
+ALIASES_PATH="~/.bash_aliases"
 
 # emotes
 alias lenny='echo "( ͡° ͜ʖ ͡°)"'
@@ -34,8 +34,7 @@ alias latr='ls -lAtr --color -F'
 ### vim ###
 alias v='vim'
 alias V=' sudo vim'
-#alias ve='vim ~/.bash_aliases'
-alias ve='vim $ALIASES_PATH'
+alias ve="vim $ALIASES_PATH"
 
 ### git ###
 alias g='clear; g2; gs'
@@ -80,9 +79,11 @@ alias week='date +%V'
 
 alias reboot='sudo reboot'
 alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
+# exit current terminal session, even if you think you are in vim
+alias :q='exit'
+alias :q\!='exit'
 
-alias light='xset led 3' #turn on keyboard light on Manjaro
-light
+#alias light='xset led 3' #turn on keyboard light on Manjaro light
 
-alias tmp='cd ~/code/github-okmanek/myGit'
+#alias tmp='cd ~/code/github-okmanek/myGit'
 #alias src='source $ALIASES_PATH'
