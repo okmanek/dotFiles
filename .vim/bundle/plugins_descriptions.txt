@@ -1,0 +1,22 @@
+idk, it was as an example in pathogen github tutorial
+git clone https://github.com/tpope/vim-sensible.git
+
+Multiple Search - multiple searches, each with different color of highlight.
+usage:
+:Search <phrase 1>
+:Search <phrase 2>
+
+
+nerdtree
+file explorer in vim
+https://github.com/scrooloose/nerdtree
+
+
+
+Goyo
+Distraction-free writing in Vim.
+https://github.com/junegunn/goyo.vim
+usage:
+:Goyo                   // turn on
+:Goyo [dimension]       // turn on or resize Goyo
+:Goyo!                  // turn off

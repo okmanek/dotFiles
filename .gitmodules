@@ -1,0 +1,12 @@
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule ".vim/bundle/goyo.vim"]
+	path = .vim/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule ".vim/bundle/vim-sensible"]
+	path = .vim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule ".vim/bundle/MultipleSearch"]
+	path = .vim/bundle/MultipleSearch
+	url = https://github.com/vim-scripts/MultipleSearch.git
