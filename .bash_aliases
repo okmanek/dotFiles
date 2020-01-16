@@ -5,7 +5,6 @@ ALIASES_PATH="~/.bash_aliases"
 alias lenny='echo "( ͡° ͜ʖ ͡°)"'
 alias sadLenny='echo "( ͡° ʖ̯ ͡°)"'
 
-
 ### package managers ###
   # ubuntu-based distros
     #alias update='sudo apt-get update'
@@ -27,9 +26,11 @@ alias web='cd ~/code/webdev/'
 ### ls ###
 alias l='ls --color -F'
 alias ls='ls --color -F'
-alias la='ls -lA --color -F'
-alias lat='ls -lAt --color -F'
-alias latr='ls -lAtr --color -F'
+alias la='ls -lAh --color -F'
+alias ll='ls -lAh --color -F'
+alias lat='ls -lAht --color -F'
+alias latr='ls -lAhtr --color -F'
+alias lh='ls -ldh .?* -F' # show only hidden files
 
 ### vim ###
 alias v='vim'
@@ -64,6 +65,7 @@ alias distro5='cat /etc/os-release'
 alias grep='grep -i --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias f='find . | grep $1'
 
 ### other ###
 alias sql='mysql -u root -p -t'
@@ -87,3 +89,4 @@ alias :q\!='exit'
 
 #alias tmp='cd ~/code/github-okmanek/myGit'
 #alias src='source $ALIASES_PATH'
+
