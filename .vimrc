@@ -39,6 +39,8 @@ set shiftwidth=2	"indenting is 4 spaces
 "set autoindent	"turns it on
 "set smartindent	"does the right thing (mostly) in programs
 "set cindent		"stricter rules for C programs
+set noautoindent     "no weird white spaces when pasting
+set paste            "as above; https://superuser.com/questions/446408/vim-copy-paste-adding-newlines
 set history=1000		"remember 1000 commands and search history
 "set clipboard=unnamed	"change default behaviour of clipboard, so that text copied outside of vim could be pasted inside
 set t_SH="fix for the bug (some signs when launching vim)

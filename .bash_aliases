@@ -5,6 +5,8 @@ ALIASES_PATH="~/.bash_aliases"
 alias lenny='echo "( ͡° ͜ʖ ͡°)"'
 alias sadLenny='echo "( ͡° ʖ̯ ͡°)"'
 
+alias update='sudo apt-get update'
+alias up='sudo apt-get update'
 ### package managers ###
   # ubuntu-based distros
     #alias update='sudo apt-get update'
@@ -38,7 +40,6 @@ alias V=' sudo vim'
 alias ve="vim $ALIASES_PATH"
 
 ### git ###
-alias g='clear; g2; gs'
 alias g1='git log -1'
 alias g2='git log -2'
 alias g3='git log -3'
@@ -66,16 +67,18 @@ alias grep='grep -i --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias f='find . | grep $1'
+alias g='grep -r $1'
 
 ### other ###
 alias sql='mysql -u root -p -t'
-alias f='free -m'
+alias free='free -m'
 alias p='ping wp.pl'
 alias t='tmux'
 alias matrix='echo -e "1"; while $t; do for i in `seq 1 30`;do r="$[($RANDOM % 2)]";h="$[($RANDOM % 4)]";if [ $h -eq 1 ]; then v="0 $r";else v="1 $r";fi;v2="$v2 $v";done;echo -e $v2;v2="";done;'
 
 alias hist='history'
 alias reload='source ~/.bashrc'
+alias src='source ~/.bashrc'
 
 alias week='date +%V'
 
@@ -84,6 +87,7 @@ alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -
 # exit current terminal session, even if you think you are in vim
 alias :q='exit'
 alias :q\!='exit'
+alias path='readlink -f $1'
 
 #alias light='xset led 3' #turn on keyboard light on Manjaro light
 
