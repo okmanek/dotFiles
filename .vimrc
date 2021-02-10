@@ -23,25 +23,26 @@ syntax on		" default vim syntax highlighting
 
 
 "///   default settings   ///"
-set nowrap "don't wrap lines
-set number "show line numbers
-set nolist " don't show white spaces
+set nowrap        " don't wrap lines
+set number        " show line numbers
+set nolist        " don't show white spaces
 
-set nobackup 		" don't create backup files
-set nowritebackup	" up
-set noswapfile		" neither swap files
+set nobackup 	    " don't create backup files
+set nowritebackup " up
+set noswapfile    " neither swap files
 
-set showcmd		"show commands like 'dd' while writing them
-set showmode		"show insert/replace/visual mode. apparantly it's default behaviour anyway so fuck it
+set showcmd	    " show commands like 'dd' while writing them
+set showmode	    " show insert/replace/visual mode. apparantly it's default behaviour anyway so fuck it
 
-" tested not thouroughly but seem to works fine:
-set shiftwidth=2	"indenting is 4 spaces
-"set autoindent	"turns it on
-"set smartindent	"does the right thing (mostly) in programs
-"set cindent		"stricter rules for C programs
-set noautoindent     "no weird white spaces when pasting
-set paste            "as above; https://superuser.com/questions/446408/vim-copy-paste-adding-newlines
-set history=1000		"remember 1000 commands and search history
+" tested not thoroughly but seem to works fine:
+set shiftwidth=2  " indenting is 2 spaces
+"set autoindent   " turns it on
+"set smartindent  " does the right thing (mostly) in programs
+"set cindent	    " stricter rules for C programs
+set noautoindent  " no weird white spaces when pasting
+set paste         " as above; https://superuser.com/questions/446408/vim-copy-paste-adding-newlines
+set pastetoggle=<F2>
+set history=1000  " remember 1000 commands and search history
 "set clipboard=unnamed	"change default behaviour of clipboard, so that text copied outside of vim could be pasted inside
 set t_SH="fix for the bug (some signs when launching vim)
 
@@ -56,9 +57,7 @@ set tabstop=7				"set tab width
 
 
 "///   keyboard shortcuts/mappings   ///"
-" Enter     enter insert mode and start new line:
 map <Enter> o
-" :q! works also in insert mode
 inoremap :q! <Esc>:q!<cr> " :q! works also in insert mode
 "///   leader keys   ///"
 let mapleader = "\<Space>"			" <space> is a leader key

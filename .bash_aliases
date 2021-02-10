@@ -53,21 +53,23 @@ alias gdf='git diff HEAD'
 alias gdff='git diff HEAD^'
 alias gdfff='git diff HEAD^^'
 alias gdffff='git diff HEAD^^^'
+alias gdfno='git diff HEAD --name-only'
 alias gc='git checkout'
 
-### distro ###
+### distro info ###
 alias distro='neofetch'
 alias distro2='cat /etc/*-release'
 alias distro3='cat /proc/version'
 alias distro4='cat /etc/issue'
 alias distro5='cat /etc/os-release'
+alias inxi='inxi -Fxz'
 
 ### grep ###
 alias grep='grep -i --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias f='find . | grep $1'
-alias g='grep -r $1'
+alias f='find . | grep $1' # killer feature
+alias g='grep -r $1' # as above
 
 ### other ###
 alias sql='mysql -u root -p -t'
@@ -76,6 +78,10 @@ alias p='ping wp.pl'
 alias t='tmux'
 alias matrix='echo -e "1"; while $t; do for i in `seq 1 30`;do r="$[($RANDOM % 2)]";h="$[($RANDOM % 4)]";if [ $h -eq 1 ]; then v="0 $r";else v="1 $r";fi;v2="$v2 $v";done;echo -e $v2;v2="";done;'
 
+alias pdf='atril' # atril needs to be installed
+alias tree='tree -CAF --dirsfirst'
+alias differ='diff -y' # more diff in a diff (side by side view #feels_good)
+alias watch='tail -n 1 -d' # change default 2Hz to 1Hz
 alias hist='history'
 alias reload='source ~/.bashrc'
 alias src='source ~/.bashrc'
@@ -84,6 +90,7 @@ alias week='date +%V'
 
 alias reboot='sudo reboot'
 alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
+alias QUIT='sudo shutdown -h now --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
 # exit current terminal session, even if you think you are in vim
 alias :q='exit'
 alias :q\!='exit'
