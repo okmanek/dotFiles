@@ -1,20 +1,33 @@
 ### global vars ###
-ALIASES_PATH="~/.bash_aliases"
+export BASHRC_PATH='~/.bashrc'
+export ALIASES_PATH='~/.bash_aliases'
 
-# emotes
+# package managers related aliases depending on which distro current distro is based on
+# assuming that existance of file /etc/arch-release is a good criterion
+if [ -f "/etc/arch-release" ]; then
+	# DISTRO_BASE="arch"
+	alias update='sudo pacman -Syu'
+	alias up='update'
+	alias light='xset led 3' #turn on keyboard light on Manjaro light
+else
+	# DISTRO_BASE="debian"
+	alias update='sudo apt-get update'
+	alias up='update'
+	alias upgrade='sudo apt-get upgrade'
+	alias UP='sudo apt-get update && sudo apt-get -y upgrade'
+ 	alias dist='sudo apt-get dist-upgrade'
+fi
+
+### typos xD ###
+alias alais='alias' # xDDD
+alias vmi='vim'
+alias sl='ls' # no steam locomotive for you
+alias shh='ssh'
+
+### emotes ###
 alias lenny='echo "( ͡° ͜ʖ ͡°)"'
 alias sadLenny='echo "( ͡° ʖ̯ ͡°)"'
-
-alias update='sudo apt-get update'
-alias up='sudo apt-get update'
-### package managers ###
-  # ubuntu-based distros
-    #alias update='sudo apt-get update'
-    #alias upgrade='sudo apt-get upgrade'
-    #alias up='sudo apt-get update && sudo apt-get -y upgrade'
-    #alias dist='sudo apt-get dist-upgrade'
-  # arch-based distros
-    #alias up='sudo pacman -Syu'
+alias matrix='echo -e "1"; while $t; do for i in `seq 1 30`;do r="$[($RANDOM % 2)]";h="$[($RANDOM % 4)]";if [ $h -eq 1 ]; then v="0 $r";else v="1 $r";fi;v2="$v2 $v";done;echo -e $v2;v2="";done;'
 
 ### cd ###
 alias c='cd'
@@ -76,28 +89,25 @@ alias sql='mysql -u root -p -t'
 alias free='free -m'
 alias p='ping wp.pl'
 alias t='tmux'
-alias matrix='echo -e "1"; while $t; do for i in `seq 1 30`;do r="$[($RANDOM % 2)]";h="$[($RANDOM % 4)]";if [ $h -eq 1 ]; then v="0 $r";else v="1 $r";fi;v2="$v2 $v";done;echo -e $v2;v2="";done;'
-
 alias pdf='atril' # atril needs to be installed
 alias tree='tree -CAF --dirsfirst'
 alias differ='diff -y' # more diff in a diff (side by side view #feels_good)
 alias watch='tail -n 1 -d' # change default 2Hz to 1Hz
 alias hist='history'
-alias reload='source ~/.bashrc'
-alias src='source ~/.bashrc'
+#alias reload='source $BASHRC_PATH'
+alias reload="source $BASHRC_PATH"
+alias src="source $BASHRC_PATH"
 
 alias week='date +%V'
+alias path='readlink -f $1'
 
-alias reboot='sudo reboot'
-alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
-alias QUIT='sudo shutdown -h now --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
+alias cp='cp -i' # fix cp which stopped asking for permission for overwriting
+
+### quitting ###
 # exit current terminal session, even if you think you are in vim
 alias :q='exit'
 alias :q\!='exit'
-alias path='readlink -f $1'
-
-#alias light='xset led 3' #turn on keyboard light on Manjaro light
-
-#alias tmp='cd ~/code/github-okmanek/myGit'
-#alias src='source $ALIASES_PATH'
-
+### quitting system ###
+alias reboot='sudo reboot'
+alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
+alias QUIT='sudo shutdown -h now --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
