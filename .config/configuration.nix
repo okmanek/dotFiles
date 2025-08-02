@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -44,10 +45,21 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
+  hardware.enableAllFirmware = true;
+  hardware.steam-hardware.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -107,6 +119,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.steam.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -117,9 +131,20 @@
      google-chrome
      guake
      clementine
-     steam
      git
+     fsearch
+     veracrypt
+     sublime
+
+     vulkan-tools  ## gaming, rendering
+     vulkan-loader
+     mesa-demos
   ];
+
+  environment.variables.EDITOR = "vim";
+  environment.variables.VISUAL = "vim";
+
+  home-manager.users.userofnixos = import ./home.nix;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
