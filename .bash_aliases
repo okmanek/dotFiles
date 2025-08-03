@@ -96,7 +96,8 @@ alias watch='tail -n 1 -d' # change default 2Hz to 1Hz
 alias hist='history'
 #alias reload='source $BASHRC_PATH'
 alias reload="source $BASHRC_PATH"
-alias src="source $BASHRC_PATH"
+#alias src="source $BASHRC_PATH"
+alias src="source ~/.bash_aliases"
 
 alias week='date +%V'
 alias path='readlink -f $1'
@@ -111,3 +112,8 @@ alias :q\!='exit'
 alias reboot='sudo reboot'
 alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
 alias QUIT='sudo shutdown -h now --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
+
+## nixos
+alias conf='sudo vim /etc/nixos/configuration.nix'
+alias home='sudo vim /etc/nixos/home.nix'
+alias rel='sudo nixos-rebuild switch'
