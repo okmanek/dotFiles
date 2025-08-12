@@ -1,0 +1,60 @@
+
+
+2025.08 - configuring zorin os
+
+
+
+
+shortcuts:
+	f1 - f4 		go to screen 1 - 4
+	ctrl win left/right 	go to screen left/right
+	win shift left/right 	move window monitor left/right
+
+	win 1 			launch chrome
+	win t 			launch terminal
+	win e 			launch file explorer
+	win s 	 		launch settings
+	ctrl ` 	 		launch guake
+
+	stop playback		win 5
+	play/pause 		win 7
+
+	todo:
+		fsearch toggle
+	
+
+Settings -> Multitasking -> Application Switching -> include applications from the current workspace only
+
+
+
+sudo apt install gnome-tweaks 		workspace behaviour to change
+w Tweaks nie ma Workspaces, do:
+gsettings set org.gnome.mutter workspaces-only-on-primary false
+
+
+
+veracrypt drives unmount after suspend:
+	fix: in /etc/default/veracrypt 
+
+
+to make alt tab change set "Switch windows directly" to alt tab
+
+
+
+## to remove stickiness of windows
+sudo apt install wmctrl
+wmctrl -r  Steam -b remove,sticky
+wmctrl -l
+
+## for chrome?
+
+sudo apt install x11-utils
+xprop
+
+
+
+Check if you have it installed via APT
+  dpkg -l | grep strawberry
+Check if you have it installed via Flatpak
+  flatpak list | grep strawberry
+flatpak run org.strawberrymusicplayer.Strawberry --log-level debug | grep -i last

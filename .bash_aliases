@@ -90,7 +90,7 @@ alias free='free -m'
 alias p='ping wp.pl'
 alias t='tmux'
 alias pdf='atril' # atril needs to be installed
-alias tree='tree -CAF --dirsfirst'
+alias tree='tree -CAFa --dirsfirst' # C - colorisation; A - ANSI line break; F - "/" for dirs, like ls -F; a - show hidden
 alias differ='diff -y' # more diff in a diff (side by side view #feels_good)
 alias watch='tail -n 1 -d' # change default 2Hz to 1Hz
 alias hist='history'
@@ -114,6 +114,6 @@ alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -
 alias QUIT='sudo shutdown -h now --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
 
 ## nixos
-alias conf='sudo vim /etc/nixos/configuration.nix'
-alias home='sudo vim /etc/nixos/home.nix'
-alias rel='sudo nixos-rebuild switch'
+#alias conf='sudo vim /etc/nixos/configuration.nix'
+#alias home='sudo vim /etc/nixos/home.nix'
+#alias rel='sudo nixos-rebuild switch'
