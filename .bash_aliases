@@ -9,6 +9,14 @@ if [ -f "/etc/arch-release" ]; then
 	alias update='sudo pacman -Syu'
 	alias up='update'
 	alias light='xset led 3' #turn on keyboard light on Manjaro light
+elif [ -f "/etc/fedora-release" ]; then
+	alias dnfup='sudo dnf upgrade --refresh'
+	alias up='dnfup'
+	alias dnfget='sudo dnf install $1'
+	alias dnfremove='sudo dnf remove $1'
+	alias dnfsearch='sudo dnf search $1'
+	alias dnfinfo='sudo dnf info $1'
+	alias dnfinstalled='sudo dnf list --installed'
 else
 	# DISTRO_BASE="debian"
 	alias update='sudo apt-get update'
@@ -51,12 +59,14 @@ alias lh='ls -ldh .?* -F' # show only hidden files
 alias v='vim'
 alias V=' sudo vim'
 alias ve="vim $ALIASES_PATH"
+alias V="ve"
 
 ### git ###
 alias g1='git log -1'
 alias g2='git log -2'
 alias g3='git log -3'
 alias ga='git add'
+alias gau='git add -u'
 alias gb='git branch'
 alias gp='git pull'
 alias gs='git status'
@@ -68,6 +78,7 @@ alias gdfff='git diff HEAD^^'
 alias gdffff='git diff HEAD^^^'
 alias gdfno='git diff HEAD --name-only'
 alias gc='git checkout'
+alias amen='git commit --amen'
 
 ### distro info ###
 alias distro='neofetch'
@@ -94,9 +105,7 @@ alias tree='tree -CAFa --dirsfirst' # C - colorisation; A - ANSI line break; F -
 alias differ='diff -y' # more diff in a diff (side by side view #feels_good)
 alias watch='tail -n 1 -d' # change default 2Hz to 1Hz
 alias hist='history'
-#alias reload='source $BASHRC_PATH'
 alias reload="source $BASHRC_PATH"
-#alias src="source $BASHRC_PATH"
 alias src="source ~/.bash_aliases"
 
 alias week='date +%V'
@@ -113,7 +122,5 @@ alias reboot='sudo reboot'
 alias quit='sudo shutdown -h $1 --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
 alias QUIT='sudo shutdown -h now --no-wall' #warning: no args validation #'quit -c' cancels schedules quit
 
-## nixos
-#alias conf='sudo vim /etc/nixos/configuration.nix'
-#alias home='sudo vim /etc/nixos/home.nix'
-#alias rel='sudo nixos-rebuild switch'
+alias fetch='fastfetch'
+alias neofetch='fastfetch'
