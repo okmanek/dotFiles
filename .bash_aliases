@@ -79,6 +79,7 @@ alias gdffff='git diff HEAD^^^'
 alias gdfno='git diff HEAD --name-only'
 alias gc='git checkout'
 alias amen='git commit --amen'
+alias push='git push'
 
 ### distro info ###
 alias distro='neofetch'
