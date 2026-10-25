@@ -47,7 +47,7 @@ alias cg='cd ~/code/github/'
 alias web='cd ~/code/webdev/'
 
 ### ls ###
-alias l='ls --color -F'
+alias l='ls -l --color -F'
 alias ls='ls --color -F'
 alias la='ls -lAh --color -F'
 alias ll='ls -lAh --color -F'
