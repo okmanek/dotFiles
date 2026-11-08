@@ -1,0 +1,59 @@
+
+
+
+
+remove predefined dirs like ~/Videos:
+	vim ~/.config/user-dirs.dirs
+	XDG_VIDEOS_DIR="$HOME/" ### "Videos" removed
+
+	## add line to prevent from recreating, but this affects all dirs
+	enabled False
+
+
+
+widgets:
+	MacOS Clock Ditigal
+
+	Glassy System Monitor
+
+	widget for currently played song
+		https://github.com/ccatterina/plasmusic-toolbar
+
+
+systemd-analyze
+systemd-analyze blame > ~/tmp
+
+
+
+
+CudaText install
+
+https://sourceforge.net/projects/cudatext/
+
+dwd (e.g. "cudatext-linux-qt6-amd64-1.239.0.1.tar.xz")
+
+unpack to ~/repo/cudatext
+
+touch /home/okmanek/.local/share/applications/cudatext.desktop
+
+## adding to desktop/search menu
+
+cat > ~/.local/share/applications/cudatext.desktop <<EOF
+[Desktop Entry]
+Name=CudaText
+Comment=Lightweight text editor
+Exec=$HOME/repo/cudatext/cudatext.sh %F
+Icon=$HOME/repo/cudatext/cudatext-512.png
+Terminal=false
+Type=Application
+Categories=Development;TextEditor;Utility
+MimeType=text/plain;
+StartupNotify=true
+EOF
+
+## if cache is stale, remove and recreate
+cd ~/.cache
+rm -rf ksycoca6*
+kbuildsycoca6 --noincremental
+
+
